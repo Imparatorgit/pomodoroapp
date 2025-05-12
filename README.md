@@ -4,47 +4,36 @@ A beautiful and feature-rich Pomodoro Timer application built with React and Typ
 
 ![Pomodoro Timer](./pomodoro_app.png)
 
-## 🚀 Latest Updates (Beta v1.1.0 - May 2025)
+## 🚀 Latest Updates (Beta v1.2.0 - May 2025)
 
-### 🐛 Bug Fixes
+### 🎨 UI Improvements
 
-1. **Timer State Persistence**
-   - Fixed: Timer state now correctly persists after page refresh
-   - Files modified: `usePomodoro.ts`
+1. **Enhanced Dark Mode**
+   - Improved contrast ratios across all components
+   - Smooth transitions between themes
+   - Context-aware UI elements
+   - Better visibility for timer progress
+   - Refined color palette for both themes
 
-2. **Statistics Reset**
-   - Fixed: Daily statistics now properly reset at midnight
-   - Previous behavior: Stats carried over to the next day
-   - Files modified: `usePomodoro.ts`, `types/index.ts`
+2. **Statistics Panel**
+   - New dark mode compatible cards
+   - Improved text contrast
+   - Smooth theme transitions
+   - Better visual hierarchy
 
-3. **Volume Control**
-   - Fixed: Volume settings now persist between sessions
-   - Added visual feedback for volume changes
-   - Files modified: `usePomodoro.ts`
+3. **Timer Component**
+   - Enhanced progress circle visibility
+   - Improved status label contrast
+   - Better color coordination in both themes
+   - Refined keyboard shortcuts display
 
-### ✨ New Features
+4. **Settings Panel**
+   - Complete dark mode support
+   - Enhanced input field styling
+   - Improved button contrast
+   - Better form accessibility
 
-1. **Dark Mode**
-   - Toggle between light and dark themes
-   - Keyboard shortcut: `Ctrl/Cmd + D`
-   - Persists user preference
-   - Context-aware UI elements and notifications
-   - Files: `DarkModeToggle.tsx`, `App.tsx`, `tailwind.config.js`
-
-2. **Daily Goals**
-   - Track daily work time progress
-   - Visual progress bar with percentage
-   - Configurable daily goal (default: 4 hours)
-   - Automatic reset at midnight
-   - Files: `DailyProgress.tsx`, `types/index.ts`
-
-3. **Enhanced Statistics**
-   - Added today's work time tracking
-   - Progress towards daily goal
-   - Improved streak tracking
-   - Dark mode compatible statistics display
-
-### 🎯 All Features
+### ✨ Features
 
 - 🎯 Customizable work and break durations
 - ⏱️ Elegant timer display with visual progress

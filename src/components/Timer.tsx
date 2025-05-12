@@ -37,34 +37,34 @@ const Timer: React.FC<TimerProps> = ({ timerState }) => {
   
   switch (status) {
     case 'work':
-      progressColor = 'stroke-red-500';
+      progressColor = settings.darkMode ? 'stroke-red-400' : 'stroke-red-500';
       statusLabel = 'Focus Time';
-      statusBg = 'bg-red-100 text-red-700';
+      statusBg = settings.darkMode ? 'bg-red-900/30 text-red-100' : 'bg-red-100 text-red-700';
       break;
     case 'shortBreak':
-      progressColor = 'stroke-green-500';
+      progressColor = settings.darkMode ? 'stroke-green-400' : 'stroke-green-500';
       statusLabel = 'Short Break';
-      statusBg = 'bg-green-100 text-green-700';
+      statusBg = settings.darkMode ? 'bg-green-900/30 text-green-100' : 'bg-green-100 text-green-700';
       break;
     case 'longBreak':
-      progressColor = 'stroke-blue-500';
+      progressColor = settings.darkMode ? 'stroke-blue-400' : 'stroke-blue-500';
       statusLabel = 'Long Break';
-      statusBg = 'bg-blue-100 text-blue-700';
+      statusBg = settings.darkMode ? 'bg-blue-900/30 text-blue-100' : 'bg-blue-100 text-blue-700';
       break;
     case 'idle':
-      progressColor = 'stroke-gray-400';
+      progressColor = settings.darkMode ? 'stroke-gray-400' : 'stroke-gray-500';
       statusLabel = 'Ready';
-      statusBg = 'bg-gray-100 text-gray-700';
+      statusBg = settings.darkMode ? 'bg-gray-800 text-gray-100' : 'bg-gray-100 text-gray-700';
       break;
     default:
-      progressColor = 'stroke-gray-400';
+      progressColor = settings.darkMode ? 'stroke-gray-400' : 'stroke-gray-500';
       statusLabel = 'Ready';
-      statusBg = 'bg-gray-100 text-gray-700';
+      statusBg = settings.darkMode ? 'bg-gray-800 text-gray-100' : 'bg-gray-100 text-gray-700';
   }
 
   return (
     <div className="w-full flex flex-col items-center justify-center">
-      <div className="text-sm text-gray-500 mb-4">
+      <div className="text-sm text-gray-500 dark:text-gray-400 mb-4">
         Keyboard Shortcuts: Space (Start/Pause) | Ctrl+R (Reset) | Ctrl+S (Skip) | Alt+↑/↓ (Volume)
       </div>
       <div className={`px-4 py-1 rounded-full text-sm font-medium mb-6 ${statusBg}`}>
@@ -78,7 +78,7 @@ const Timer: React.FC<TimerProps> = ({ timerState }) => {
             cy="128"
             r="120"
             fill="none"
-            className="stroke-gray-200"
+            className={settings.darkMode ? 'stroke-gray-700' : 'stroke-gray-200'}
             strokeWidth="12"
           />
         </svg>
@@ -101,7 +101,7 @@ const Timer: React.FC<TimerProps> = ({ timerState }) => {
           />
         </svg>
         
-        <div className="text-6xl font-bold text-gray-800 tracking-tight">
+        <div className="text-6xl font-bold text-gray-800 dark:text-gray-100 tracking-tight">
           {formatTime(timeLeft)}
         </div>
       </div>
@@ -109,4 +109,4 @@ const Timer: React.FC<TimerProps> = ({ timerState }) => {
   );
 };
 
-export default Timer;
+export default Timer
