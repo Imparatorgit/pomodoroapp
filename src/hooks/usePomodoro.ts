@@ -22,6 +22,8 @@ const getInitialStatistics = () => {
     dailyStreak: 0,
     lastCompletedDate: null,
     todayWorkTime: 0,
+    tasks: [], // Initialize tasks as empty array
+    sessions: [], // Initialize sessions as empty array
   };
 
   if (savedStats) {
@@ -30,7 +32,13 @@ const getInitialStatistics = () => {
     if (stats.lastCompletedDate !== today) {
       stats.todayWorkTime = 0;
     }
-    return stats;
+    // Ensure tasks and sessions exist even in saved stats
+    return {
+      ...defaultStats,
+      ...stats,
+      tasks: stats.tasks || [],
+      sessions: stats.sessions || [],
+    };
   }
 
   return defaultStats;
