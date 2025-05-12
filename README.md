@@ -2,9 +2,9 @@
 
 A beautiful and feature-rich Pomodoro Timer application built with React and TypeScript. Stay focused and boost your productivity with this modern implementation of the Pomodoro Technique.
 
-![Pomodoro Timer](./pomodoro._app.png)
+![Pomodoro Timer](./pomodoro_app.png)
 
-## 🚀 Latest Updates (v1.1.0 - March 2025)
+## 🚀 Latest Updates (v1.1.0 - May 2025)
 
 ### 🐛 Bug Fixes
 
