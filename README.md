@@ -2,9 +2,49 @@
 
 A beautiful and feature-rich Pomodoro Timer application built with React and TypeScript. Stay focused and boost your productivity with this modern implementation of the Pomodoro Technique.
 
-![Pomodoro Timer](https://images.pexels.com/photos/1252890/pexels-photo-1252890.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)
+![Pomodoro Timer](./pomodoro._app.png)
 
-## Features
+## 🚀 Latest Updates (v1.1.0 - March 2025)
+
+### 🐛 Bug Fixes
+
+1. **Timer State Persistence**
+   - Fixed: Timer state now correctly persists after page refresh
+   - Files modified: `usePomodoro.ts`
+
+2. **Statistics Reset**
+   - Fixed: Daily statistics now properly reset at midnight
+   - Previous behavior: Stats carried over to the next day
+   - Files modified: `usePomodoro.ts`, `types/index.ts`
+
+3. **Volume Control**
+   - Fixed: Volume settings now persist between sessions
+   - Added visual feedback for volume changes
+   - Files modified: `usePomodoro.ts`
+
+### ✨ New Features
+
+1. **Dark Mode**
+   - Toggle between light and dark themes
+   - Keyboard shortcut: `Ctrl/Cmd + D`
+   - Persists user preference
+   - Context-aware UI elements and notifications
+   - Files: `DarkModeToggle.tsx`, `App.tsx`, `tailwind.config.js`
+
+2. **Daily Goals**
+   - Track daily work time progress
+   - Visual progress bar with percentage
+   - Configurable daily goal (default: 4 hours)
+   - Automatic reset at midnight
+   - Files: `DailyProgress.tsx`, `types/index.ts`
+
+3. **Enhanced Statistics**
+   - Added today's work time tracking
+   - Progress towards daily goal
+   - Improved streak tracking
+   - Dark mode compatible statistics display
+
+### 🎯 All Features
 
 - 🎯 Customizable work and break durations
 - ⏱️ Elegant timer display with visual progress
@@ -14,13 +54,17 @@ A beautiful and feature-rich Pomodoro Timer application built with React and Typ
   - Completed pomodoros
   - Daily streak
   - Break time
+  - Daily goal progress
+- 🌓 Dark mode support
 - 🔔 Audio and visual notifications
 - ⌨️ Keyboard shortcuts
   - Space: Start/Pause
   - Ctrl/Cmd + R: Reset
   - Ctrl/Cmd + S: Skip
+  - Ctrl/Cmd + D: Toggle Dark Mode
+  - Alt + ↑/↓: Volume Control
 - 🎨 Beautiful UI with context-aware themes
-- 💾 Persistent statistics
+- 💾 Persistent settings and statistics
 - 📱 Responsive design
 
 ## Getting Started
@@ -37,11 +81,13 @@ A beautiful and feature-rich Pomodoro Timer application built with React and Typ
 
 ## Keyboard Shortcuts
 
-| Shortcut      | Action      |
-|---------------|-------------|
-| Space         | Start/Pause |
-| Ctrl/Cmd + R  | Reset Timer |
-| Ctrl/Cmd + S  | Skip Phase  |
+| Shortcut      | Action           |
+|---------------|------------------|
+| Space         | Start/Pause      |
+| Ctrl/Cmd + R  | Reset Timer      |
+| Ctrl/Cmd + S  | Skip Phase       |
+| Ctrl/Cmd + D  | Toggle Dark Mode |
+| Alt + ↑/↓     | Volume Control   |
 
 ## The Pomodoro Technique
 
