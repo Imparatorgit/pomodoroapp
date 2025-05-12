@@ -7,17 +7,33 @@ const DEFAULT_SETTINGS = {
   shortBreakDuration: 5 * 60,
   longBreakDuration: 15 * 60,
   longBreakInterval: 4,
+  dailyGoal: 4, // 4 hours daily goal
+  darkMode: false,
 };
 
 const getInitialStatistics = () => {
   const savedStats = localStorage.getItem('pomodoroStats');
-  return savedStats ? JSON.parse(savedStats) : {
+  const today = new Date().toLocaleDateString();
+  
+  const defaultStats = {
     totalWorkTime: 0,
     totalBreakTime: 0,
     completedPomodoros: 0,
     dailyStreak: 0,
     lastCompletedDate: null,
+    todayWorkTime: 0,
   };
+
+  if (savedStats) {
+    const stats = JSON.parse(savedStats);
+    // Reset today's work time if it's a new day
+    if (stats.lastCompletedDate !== today) {
+      stats.todayWorkTime = 0;
+    }
+    return stats;
+  }
+
+  return defaultStats;
 };
 
 const initialState: TimerState = {
@@ -182,6 +198,13 @@ export const usePomodoro = () => {
             skip();
           }
           break;
+        case 'KeyD':
+          if (e.ctrlKey || e.metaKey) {
+            e.preventDefault();
+            updateSettings({ darkMode: !state.settings.darkMode });
+            toast.success(`${state.settings.darkMode ? 'Light' : 'Dark'} mode enabled`);
+          }
+          break;
         case 'ArrowUp':
           if (e.altKey) {
             e.preventDefault();
@@ -201,7 +224,7 @@ export const usePomodoro = () => {
 
     window.addEventListener('keydown', handleKeyPress);
     return () => window.removeEventListener('keydown', handleKeyPress);
-  }, [state.isActive, volume]);
+  }, [state.isActive, state.settings.darkMode, volume]);
 
   // Timer effect
   useEffect(() => {

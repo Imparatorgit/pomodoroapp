@@ -5,6 +5,8 @@ export interface TimerSettings {
   shortBreakDuration: number;
   longBreakDuration: number;
   longBreakInterval: number;
+  dailyGoal: number;
+  darkMode: boolean;
 }
 
 export interface TimerStatistics {
@@ -13,6 +15,7 @@ export interface TimerStatistics {
   completedPomodoros: number;
   dailyStreak: number;
   lastCompletedDate: string | null;
+  todayWorkTime: number;
 }
 
 export interface TimerState {
