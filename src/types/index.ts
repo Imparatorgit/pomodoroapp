@@ -1,5 +1,22 @@
 export type TimerStatus = 'work' | 'shortBreak' | 'longBreak' | 'idle';
 
+export interface Task {
+  id: string;
+  title: string;
+  completed: boolean;
+  pomodoros: number;
+  createdAt: string;
+}
+
+export interface Session {
+  id: string;
+  type: TimerStatus;
+  duration: number;
+  startTime: string;
+  endTime: string;
+  taskId?: string;
+}
+
 export interface TimerSettings {
   workDuration: number;
   shortBreakDuration: number;
@@ -7,6 +24,9 @@ export interface TimerSettings {
   longBreakInterval: number;
   dailyGoal: number;
   darkMode: boolean;
+  soundEnabled: boolean;
+  soundUrl: string;
+  volume: number;
 }
 
 export interface TimerStatistics {
@@ -16,6 +36,8 @@ export interface TimerStatistics {
   dailyStreak: number;
   lastCompletedDate: string | null;
   todayWorkTime: number;
+  sessions: Session[];
+  tasks: Task[];
 }
 
 export interface TimerState {
@@ -26,4 +48,5 @@ export interface TimerState {
   settings: TimerSettings;
   showSettings: boolean;
   statistics: TimerStatistics;
+  currentTask?: Task;
 }

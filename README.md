@@ -2,7 +2,7 @@
 
 A beautiful and feature-rich Pomodoro Timer application built with React and TypeScript. Stay focused and boost your productivity with this modern implementation of the Pomodoro Technique.
 
-![Pomodoro Timer](./pomodoro_app1.png)
+![Pomodoro Timer](./pomodoro_app.png)
 
 ## 🚀 Latest Updates (Beta v1.2.0 - May 2025)
 
@@ -86,7 +86,7 @@ The Pomodoro Technique is a time management method developed by Francesco Cirill
 2. Work for 25 minutes
 3. Take a 5-minute break
 4. After 4 pomodoros, take a longer break (15-30 minutes)
-5. Repeat!
+5. Repeat
 
 ## Contributing
 

@@ -8,7 +8,10 @@ import Statistics from './components/Statistics';
 import Footer from './components/Footer';
 import DarkModeToggle from './components/DarkModeToggle';
 import DailyProgress from './components/DailyProgress';
-import { TimerSettings } from './types';
+import TaskManager from './components/TaskManager';
+import SessionHistory from './components/SessionHistory';
+import SoundSettings from './components/SoundSettings';
+import { TimerSettings, Task } from './types';
 import { Toaster } from 'react-hot-toast';
 
 function App() {
@@ -20,6 +23,13 @@ function App() {
     skip,
     toggleSettings,
     updateSettings,
+    addTask,
+    selectTask,
+    completeTask,
+    deleteTask,
+    toggleSound,
+    updateVolume,
+    updateSoundUrl,
   } = usePomodoro();
 
   const handleSaveSettings = (newSettings: TimerSettings) => {
@@ -44,6 +54,10 @@ function App() {
       ? 'bg-blue-950'
       : 'bg-gradient-to-br from-blue-50 to-indigo-50';
   }
+
+  const handleAddTask = (task: Omit<Task, 'id' | 'createdAt'>) => {
+    addTask(task);
+  };
 
   return (
     <div className={`min-h-screen flex flex-col transition-colors duration-700 ${bgColor} ${state.settings.darkMode ? 'dark' : ''}`}>
@@ -82,7 +96,21 @@ function App() {
             dailyGoal={state.settings.dailyGoal}
           />
 
+          <TaskManager
+            tasks={state.statistics.tasks}
+            currentTask={state.currentTask}
+            onAddTask={handleAddTask}
+            onSelectTask={selectTask}
+            onCompleteTask={completeTask}
+            onDeleteTask={deleteTask}
+          />
+
           <Statistics statistics={state.statistics} />
+
+          <SessionHistory
+            sessions={state.statistics.sessions}
+            tasks={state.statistics.tasks}
+          />
         </main>
 
         <Footer />
@@ -92,7 +120,16 @@ function App() {
           settings={state.settings}
           onClose={toggleSettings}
           onSave={handleSaveSettings}
-        />
+        >
+          <SoundSettings
+            soundEnabled={state.settings.soundEnabled}
+            volume={state.settings.volume}
+            soundUrl={state.settings.soundUrl}
+            onToggleSound={toggleSound}
+            onVolumeChange={updateVolume}
+            onSoundUrlChange={updateSoundUrl}
+          />
+        </SettingsPanel>
       </div>
 
       <Toaster
