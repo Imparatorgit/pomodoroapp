@@ -4,7 +4,7 @@ A beautiful and feature-rich Pomodoro Timer application built with React and Typ
 
 ![Pomodoro Timer](./pomodoro_app.png)
 
-## 🚀 Latest Updates (v1.1.0 - May 2025)
+## 🚀 Latest Updates (Beta v1.1.0 - May 2025)
 
 ### 🐛 Bug Fixes
 
