@@ -86,7 +86,7 @@ The Pomodoro Technique is a time management method developed by Francesco Cirill
 2. Work for 25 minutes
 3. Take a 5-minute break
 4. After 4 pomodoros, take a longer break (15-30 minutes)
-5. Repeat
+5. Repeat!
 
 ## Contributing
 
